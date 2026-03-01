@@ -1,0 +1,290 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".MainActivity">
+
+    <!-- 1. الشريط العلوي -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/log"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <TextView
+            android:id="@+id/txtAppTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_title"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgNotification"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:src="@drawable/nov"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/imgSearch"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/search"
+            app:layout_constraintEnd_toStartOf="@+id/imgNotification"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 2. المحتوى الرئيسي -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNav"
+        app:layout_constraintTop_toBottomOf="@+id/topBar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp">
+
+            <!-- البانر -->
+            <ImageView
+                android:id="@+id/imgBanner"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:background="@color/light_gray"
+                android:scaleType="centerCrop"
+                android:src="@drawable/mark"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!-- قسم التصنيفات -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutRow1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                app:layout_constraintTop_toBottomOf="@+id/imgBanner">
+                <LinearLayout android:id="@+id/catDogs" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintEnd_toStartOf="@+id/catCats" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+                    <ImageView android:layout_width="70dp" android:layout_height="70dp" android:background="@drawable/circle_bg" android:scaleType="centerInside" android:src="@drawable/dogs" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/dogs" android:textStyle="bold" android:textColor="@color/black" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/catCats" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintEnd_toStartOf="@+id/catRabbits" app:layout_constraintStart_toEndOf="@+id/catDogs" app:layout_constraintTop_toTopOf="parent">
+                    <ImageView android:layout_width="70dp" android:layout_height="70dp" android:background="@drawable/circle_bg" android:scaleType="centerInside" android:src="@drawable/cat3" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/cats" android:textStyle="bold" android:textColor="@color/black" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/catRabbits" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintEnd_toStartOf="@+id/catBirds" app:layout_constraintStart_toEndOf="@+id/catCats" app:layout_constraintTop_toTopOf="parent">
+                    <ImageView android:layout_width="70dp" android:layout_height="70dp" android:background="@drawable/circle_bg" android:scaleType="centerInside" android:src="@drawable/rabbits" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/rabbits" android:textStyle="bold" android:textColor="@color/black" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/catBirds" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/catRabbits" app:layout_constraintTop_toTopOf="parent">
+                    <ImageView android:layout_width="70dp" android:layout_height="70dp" android:background="@drawable/circle_bg" android:scaleType="centerInside" android:src="@drawable/birds" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/birds" android:textStyle="bold" android:textColor="@color/black" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutRow2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintTop_toBottomOf="@+id/layoutRow1">
+                <LinearLayout android:id="@+id/catReptiles" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintEnd_toStartOf="@+id/catFish" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+                    <ImageView android:layout_width="70dp" android:layout_height="70dp" android:background="@drawable/circle_bg" android:scaleType="centerInside" android:src="@drawable/reptiles" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/reptiles" android:textStyle="bold" android:textColor="@color/black" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/catFish" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintEnd_toStartOf="@+id/catPrimates" app:layout_constraintStart_toEndOf="@+id/catReptiles" app:layout_constraintTop_toTopOf="parent">
+                    <ImageView android:layout_width="70dp" android:layout_height="70dp" android:background="@drawable/circle_bg" android:scaleType="centerInside" android:src="@drawable/fish" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/fish" android:textStyle="bold" android:textColor="@color/black" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/catPrimates" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintEnd_toStartOf="@+id/catOther" app:layout_constraintStart_toEndOf="@+id/catFish" app:layout_constraintTop_toTopOf="parent">
+                    <ImageView android:layout_width="70dp" android:layout_height="70dp" android:background="@drawable/circle_bg" android:scaleType="centerInside" android:src="@drawable/primates" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/primates" android:textStyle="bold" android:textColor="@color/black" />
+                </LinearLayout>
+                <LinearLayout android:id="@+id/catOther" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/catPrimates" app:layout_constraintTop_toTopOf="parent">
+                    <ImageView android:layout_width="70dp" android:layout_height="70dp" android:background="@drawable/circle_bg" android:scaleType="centerInside" android:src="@drawable/other" />
+                    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/other" android:textStyle="bold" android:textColor="@color/black" />
+                </LinearLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- عنوان Pets Near You -->
+            <TextView
+                android:id="@+id/txtNearYou"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/pets_near_you"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/layoutRow2" />
+
+            <TextView
+                android:id="@+id/btnViewAllNear"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_all"
+                android:textColor="@color/primary_orange"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/txtNearYou"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtNearYou" />
+
+            <!-- القوائم الأفقية -->
+            <HorizontalScrollView
+                android:id="@+id/scrollPetsNearYou"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@+id/txtNearYou">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/petCard1" android:layout_width="160dp" android:layout_height="wrap_content" android:layout_marginEnd="16dp">
+                        <ImageView android:id="@+id/imgPet1" android:layout_width="match_parent" android:layout_height="160dp" android:background="@color/light_gray" android:scaleType="centerCrop" android:src="@drawable/dog" app:layout_constraintTop_toTopOf="parent" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/mochi" android:textColor="@color/black" android:textStyle="bold" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgPet1" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/petCard2" android:layout_width="160dp" android:layout_height="wrap_content" android:layout_marginEnd="16dp">
+                        <ImageView android:id="@+id/imgPet2" android:layout_width="match_parent" android:layout_height="160dp" android:background="@color/light_gray" android:scaleType="centerCrop" android:src="@drawable/dogs1" app:layout_constraintTop_toTopOf="parent" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/mochi" android:textColor="@color/black" android:textStyle="bold" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgPet2" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/petCard3" android:layout_width="160dp" android:layout_height="wrap_content" android:layout_marginEnd="16dp">
+                        <ImageView android:id="@+id/imgPet3" android:layout_width="match_parent" android:layout_height="160dp" android:background="@color/light_gray" android:scaleType="centerCrop" android:src="@drawable/dogggggg" app:layout_constraintTop_toTopOf="parent" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/mochi" android:textColor="@color/black" android:textStyle="bold" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgPet3" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/petCard4" android:layout_width="160dp" android:layout_height="wrap_content" android:layout_marginEnd="16dp">
+                        <ImageView android:id="@+id/imgPet4" android:layout_width="match_parent" android:layout_height="160dp" android:background="@color/light_gray" android:scaleType="centerCrop" android:src="@drawable/dogs3" app:layout_constraintTop_toTopOf="parent" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/mochi" android:textColor="@color/black" android:textStyle="bold" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgPet4" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/petCard5" android:layout_width="160dp" android:layout_height="wrap_content" android:layout_marginEnd="16dp">
+                        <ImageView android:id="@+id/imgPet5" android:layout_width="match_parent" android:layout_height="160dp" android:background="@color/light_gray" android:scaleType="centerCrop" android:src="@drawable/bired" app:layout_constraintTop_toTopOf="parent" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="@string/luna" android:textColor="@color/black" android:textStyle="bold" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgPet5" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </LinearLayout>
+            </HorizontalScrollView>
+
+
+            <TextView
+                android:id="@+id/txtPreferences"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="@string/based_on_preferences"
+                android:textColor="@color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/scrollPetsNearYou" />
+
+            <TextView
+                android:id="@+id/btnViewAllPref"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view_all"
+                android:textColor="@color/primary_orange"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/txtPreferences"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/txtPreferences" />
+
+            <HorizontalScrollView
+                android:id="@+id/scrollPreferences"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:scrollbars="none"
+                app:layout_constraintTop_toBottomOf="@+id/txtPreferences">
+                <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:orientation="horizontal">
+                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/petCard6" android:layout_width="160dp" android:layout_height="wrap_content" android:layout_marginEnd="16dp">
+                        <ImageView android:id="@+id/imgPet6" android:layout_width="match_parent" android:layout_height="160dp" android:background="@color/light_gray" android:scaleType="centerCrop" android:src="@drawable/dog2" app:layout_constraintTop_toTopOf="parent" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Max" android:textColor="@color/black" android:textStyle="bold" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgPet6" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/petCard7" android:layout_width="160dp" android:layout_height="wrap_content" android:layout_marginEnd="16dp">
+                        <ImageView android:id="@+id/imgPet7" android:layout_width="match_parent" android:layout_height="160dp" android:background="@color/light_gray" android:scaleType="centerCrop" android:src="@drawable/mankee" app:layout_constraintTop_toTopOf="parent" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Max" android:textColor="@color/black" android:textStyle="bold" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgPet7" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/petCard8" android:layout_width="160dp" android:layout_height="wrap_content" android:layout_marginEnd="16dp">
+                        <ImageView android:id="@+id/imgPet8" android:layout_width="match_parent" android:layout_height="160dp" android:background="@color/light_gray" android:scaleType="centerCrop" android:src="@drawable/cat2" app:layout_constraintTop_toTopOf="parent" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Max" android:textColor="@color/black" android:textStyle="bold" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgPet8" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/petCard9" android:layout_width="160dp" android:layout_height="wrap_content" android:layout_marginEnd="16dp">
+                        <ImageView android:id="@+id/imgPet9" android:layout_width="match_parent" android:layout_height="160dp" android:background="@color/light_gray" android:scaleType="centerCrop" android:src="@drawable/cats1" app:layout_constraintTop_toTopOf="parent" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Max" android:textColor="@color/black" android:textStyle="bold" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgPet9" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                    <androidx.constraintlayout.widget.ConstraintLayout android:id="@+id/petCard10" android:layout_width="160dp" android:layout_height="wrap_content" android:layout_marginEnd="16dp">
+                        <ImageView android:id="@+id/imgPet10" android:layout_width="match_parent" android:layout_height="160dp" android:background="@color/light_gray" android:scaleType="centerCrop" android:src="@drawable/dogs5" app:layout_constraintTop_toTopOf="parent" />
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="8dp" android:text="Max" android:textColor="@color/black" android:textStyle="bold" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toBottomOf="@+id/imgPet10" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+    <!-- شريط التنقل السفلي -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@color/white"
+        android:elevation="10dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+        <LinearLayout android:id="@+id/HomeChat" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/navMaps" app:layout_constraintStart_toStartOf="parent" app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="24dp"
+                android:src="@drawable/homeon" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/home" android:textColor="@color/primary_orange" android:textSize="10sp" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navMaps" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/navFav" app:layout_constraintStart_toEndOf="@+id/HomeChat" app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="22dp"
+                android:src="@drawable/map" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/maps" android:textSize="10sp" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navFav" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/navMsg" app:layout_constraintStart_toEndOf="@+id/navMaps" app:layout_constraintTop_toTopOf="parent">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/favourites" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/favourites" android:textSize="10sp" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navMsg" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/navAccount" app:layout_constraintStart_toEndOf="@+id/navFav" app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="17dp"
+                android:layout_height="13dp"
+                android:src="@drawable/chat" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/messages" android:textSize="10sp" />
+        </LinearLayout>
+        <LinearLayout android:id="@+id/navAccount" android:layout_width="0dp" android:layout_height="wrap_content" android:gravity="center" android:orientation="vertical" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toEndOf="@+id/navMsg" app:layout_constraintTop_toTopOf="parent">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/account" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/account" android:textSize="10sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

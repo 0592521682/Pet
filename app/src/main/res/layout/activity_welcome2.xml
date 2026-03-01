@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primary_orange">
+
+    <!-- 1. منطقة الصورة -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/topSection2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.55"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="500dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/cat"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 2. منطقة النصوص المنحنية -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/white_curved_bg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topSection2">
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:paddingHorizontal="24dp"
+            android:text="Explore a World of Companionship"
+            android:textColor="@color/black"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/desc2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:lineSpacingExtra="4dp"
+            android:paddingHorizontal="32dp"
+            android:text="Discover a diverse array of adorable companions, find your favorites, and let the adventure begin."
+            android:textColor="@color/text_gray"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/title2" />
+
+        <!-- النقاط (النقطة الثانية مفعّلة) -->
+        <LinearLayout
+            android:id="@+id/dotsLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/desc2">
+            <View android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/dot_inactive" android:layout_marginEnd="8dp" />
+            <View android:layout_width="30dp" android:layout_height="10dp" android:background="@drawable/dot_active" android:layout_marginEnd="8dp" />
+            <View android:layout_width="10dp" android:layout_height="10dp" android:background="@drawable/dot_inactive" />
+        </LinearLayout>
+
+        <!-- الأزرار السفلية -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="32dp"
+            android:orientation="horizontal"
+            android:paddingHorizontal="24dp"
+            android:weightSum="2"
+            app:layout_constraintBottom_toBottomOf="parent">
+            <Button android:layout_width="0dp" android:layout_height="60dp" android:layout_marginEnd="12dp" android:layout_weight="1" android:backgroundTint="#FFF7F0" android:text="Skip" android:textAllCaps="false" android:textColor="@color/primary_orange" app:cornerRadius="30dp" />
+            <Button android:layout_width="0dp" android:layout_height="60dp" android:layout_weight="1" android:backgroundTint="@color/primary_orange" android:text="Continue" android:textAllCaps="false" android:textColor="@color/white" app:cornerRadius="30dp" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
