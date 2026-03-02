@@ -7,14 +7,13 @@
     android:background="@color/white"
     tools:context=".PetsNearYouActivity">
 
-    <!-- 1. الشريط العلوي (Top Bar) -->
+    <!-- الشريط العلوي -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/nearYouTopBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
         app:layout_constraintTop_toTopOf="parent">
-
         <ImageView
             android:id="@+id/btnBackNearYou"
             android:layout_width="30dp"
@@ -25,7 +24,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:tint="@color/black" />
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -37,306 +35,55 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
-
-        <ImageView
-            android:id="@+id/btnSearchNear"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:src="@android:drawable/ic_menu_search"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:tint="@color/black" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 2. شريط التصنيفات (All 8 Categories) -->
+    <!-- قائمة التصنيفات -->
     <HorizontalScrollView
         android:id="@+id/scrollChips"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:scrollbars="none"
         app:layout_constraintTop_toBottomOf="@+id/nearYouTopBar">
-
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:paddingTop="8dp"
-            android:paddingBottom="16dp">
-
-            <!-- 1. Dogs -->
+            android:padding="16dp">
+            <!-- Dogs Chip -->
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
                 android:background="@drawable/chip_bg"
                 android:backgroundTint="@color/primary_orange"
-                android:gravity="center"
-                android:orientation="horizontal"
                 android:padding="10dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/dogs"
-                    android:layout_marginEnd="8dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Dogs"
-                    android:textColor="@color/white"
-                    android:textStyle="bold" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dogs" android:textColor="@color/white" android:textStyle="bold" />
             </LinearLayout>
-
-            <!-- 2. Cats -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/chip_bg"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/cats"
-                    android:layout_marginEnd="8dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Cats"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- 3. Rabbits -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/chip_bg"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/rabbits"
-                    android:layout_marginEnd="8dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Rabbits"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- 4. Birds -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/chip_bg"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/birds"
-                    android:layout_marginEnd="8dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Birds"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- 5. Reptiles -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/chip_bg"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/reptiles"
-                    android:layout_marginEnd="8dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Reptiles"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- 6. Fish -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/chip_bg"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/fish"
-                    android:layout_marginEnd="8dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Fish"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- 7. Primates -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="12dp"
-                android:background="@drawable/chip_bg"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/primates"
-                    android:layout_marginEnd="8dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Primates"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-            <!-- 8. Other -->
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/chip_bg"
-                android:gravity="center"
-                android:orientation="horizontal"
-                android:padding="10dp">
-                <ImageView
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:src="@drawable/other"
-                    android:layout_marginEnd="8dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Other"
-                    android:textColor="@color/black"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
+            <!-- ... -->
         </LinearLayout>
     </HorizontalScrollView>
 
-    <!-- 3. قائمة الحيوانات القابلة للتمرير -->
-    <ScrollView
+    <!-- قائمة الحيوانات ListView -->
+    <ListView
+        android:id="@+id/petsNearYouListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:scrollbars="none"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="12dp"
+        android:paddingHorizontal="16dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationViewNear"
+        app:layout_constraintTop_toBottomOf="@+id/scrollChips" />
+
+    <!-- الشريط السفلي الرسمي -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNavigationViewNear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:elevation="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollChips">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-            <!-- الصف الأول -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="16dp"
-                android:orientation="horizontal"
-                android:weightSum="2">
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
-                    android:layout_weight="1">
-                    <ImageView
-                        android:id="@+id/imgNear1"
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:background="@color/light_gray"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/dog"
-                        app:layout_constraintTop_toTopOf="parent" />
-                    <TextView
-                        android:id="@+id/txtNameNear1"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Luna"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imgNear1" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="📍 1.2 km"
-                        android:textColor="@color/text_gray"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txtNameNear1" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="8dp"
-                    android:layout_weight="1">
-                    <ImageView
-                        android:id="@+id/imgNear2"
-                        android:layout_width="match_parent"
-                        android:layout_height="180dp"
-                        android:background="@color/light_gray"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/dog2"
-                        app:layout_constraintTop_toTopOf="parent" />
-                    <TextView
-                        android:id="@+id/txtNameNear2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Rusty"
-                        android:textColor="@color/black"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imgNear2" />
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="📍 1.8 km"
-                        android:textColor="@color/text_gray"
-                        android:textSize="12sp"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txtNameNear2" />
-                </androidx.constraintlayout.widget.ConstraintLayout>
-            </LinearLayout>
-
-            <!-- يمكن إضافة المزيد من الصفوف هنا بنفس الطريقة -->
-
-        </LinearLayout>
-    </ScrollView>
+        app:menu="@menu/bottom_nav_menu"
+        app:itemIconTint="@color/primary_orange"
+        app:labelVisibilityMode="labeled" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

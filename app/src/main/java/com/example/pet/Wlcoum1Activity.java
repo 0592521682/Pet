@@ -14,9 +14,9 @@ public class Wlcoum1Activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome1);
 
-        Button skip = findViewById(R.id.Skip);
-        if (skip != null) {
-            skip.setOnClickListener(v -> {
+        Button contnue = findViewById(R.id.contnue);
+        if (contnue != null) {
+            contnue.setOnClickListener(v -> {
                 startActivity(new Intent(Wlcoum1Activity.this, getStartActivity.class));
             });
         }

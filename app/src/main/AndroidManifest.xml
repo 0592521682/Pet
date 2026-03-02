@@ -11,37 +11,93 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pet">
-        
+
+
+
         <activity
             android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".MainActivity" android:exported="false" />
-        <activity android:name=".Wlcoum1Activity" android:exported="false" />
-        <activity android:name=".getStartActivity" android:exported="false" />
-        <activity android:name=".signUpActivity" android:exported="false" />
-        <activity android:name=".SearchActivity" android:exported="false" />
-        <activity android:name=".PetListActivity" android:exported="false" />
-        <activity android:name=".ChatActivity" android:exported="false" />
-        <activity android:name=".CallsActivity" android:exported="false" />
-        <activity android:name=".ChatRoomActivity" android:exported="false" />
-        <activity android:name=".NotificationsActivity" android:exported="false" />
-        <activity android:name=".PetDetailsActivity" android:exported="false" />
-        <activity android:name=".AccountActivity" android:exported="false" />
-        <activity android:name=".AppLanguage" android:exported="false" />
-        <activity android:name=".MapActivity" android:exported="false" />
-        <activity android:name=".FavouretActivity" android:exported="false" />
-        <activity android:name=".EditProfileActivity" android:exported="false" />
-        <activity android:name=".HelpSupportActivity" android:exported="false" />
-        <activity android:name=".LinkedAccountsActivity" android:exported="false" />
-        <activity android:name=".PreferencesListActivity" android:exported="false" />
-        <activity android:name=".PetsNearYouActivity" android:exported="false" />
-
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Wlcoum1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".getStartActivity"
+            android:exported="false" />
+        <activity
+            android:name=".signInActivity"
+            android:exported="false" />
+        <activity
+            android:name=".signUpActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SearchActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PetListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".CallsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ChatRoomActivity"
+            android:exported="false" />
+        <activity
+            android:name=".NotificationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PetDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AccountActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AppLanguage"
+            android:exported="false" />
+        <activity
+            android:name=".MapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FavouretActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".HelpSupportActivity"
+            android:exported="false" />
+        <activity
+            android:name=".LinkedAccountsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PreferencesListActivity"
+            android:exported="false" />
+        <activity
+            android:name=".PetsNearYouActivity"
+            android:exported="false" />
+        <activity
+            android:name=".step1Activity"
+            android:exported="false" />
+        <activity
+            android:name=".step2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".step3Activity"
+            android:exported="false" />
+        <activity
+            android:name=".step4Activity"
+            android:exported="false" />
     </application>
 
 </manifest>

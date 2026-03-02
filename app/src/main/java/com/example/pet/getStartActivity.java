@@ -15,10 +15,17 @@ public class getStartActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_get_started);
 
-        Button skip = findViewById(R.id.btnSignUp);
-        if (skip != null) {
-            skip.setOnClickListener(v -> {
-                startActivity(new Intent(getStartActivity.this, signUpActivity.class));
+        Button signUp = findViewById(R.id.btnSignUp);
+
+        if (signUp != null) {
+            signUp.setOnClickListener(v -> {
+                startActivity(new Intent(getStartActivity.this,signUpActivity.class));
+            });
+        }
+        Button sginIn = findViewById(R.id.btnSignIn);
+        if (sginIn != null) {
+            sginIn.setOnClickListener(v -> {
+                startActivity(new Intent(getStartActivity.this,signInActivity.class));
             });
         }
     }

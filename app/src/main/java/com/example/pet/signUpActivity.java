@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -14,11 +15,18 @@ public class signUpActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up);
 
-        Button skip = findViewById(R.id.btnSubmitSignUp);
-        if (skip != null) {
-            skip.setOnClickListener(v -> {
-                startActivity(new Intent(signUpActivity.this, MainActivity.class));
+        Button signUp = findViewById(R.id.btnSubmitSignUp);
+        if (signUp != null) {
+            signUp.setOnClickListener(v -> {
+                startActivity(new Intent(signUpActivity.this, step1Activity.class));
             });
         }
+        TextView SignIn = findViewById(R.id.sginIn);
+        if (SignIn != null) {
+            SignIn.setOnClickListener(v -> {
+                startActivity(new Intent(signUpActivity.this, signInActivity.class));
+            });
+        }
+
     }
 }
