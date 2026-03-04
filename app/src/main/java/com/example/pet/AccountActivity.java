@@ -3,10 +3,7 @@ package com.example.pet;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 public class AccountActivity extends AppCompatActivity {
@@ -17,65 +14,38 @@ public class AccountActivity extends AppCompatActivity {
         setContentView(R.layout.activity_account);
 
 
-        ImageView btnLogout = findViewById(R.id.iconLogout);
+        View btnLogout = findViewById(R.id.btnSignout);
         if (btnLogout != null) {
-            btnLogout.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    finish();
-                }
-            });
-        }
-
-        LinearLayout navMain = findViewById(R.id.navHomeAcc);
-        if (navMain != null) {
-            navMain.setOnClickListener(v -> {
-                startActivity(new Intent(AccountActivity.this, MainActivity.class));
-            });
-        }
-
-        ImageView relativeMyProfile = findViewById(R.id.RelativeMyProfile);
-        if (relativeMyProfile != null) {
-            relativeMyProfile.setOnClickListener(v -> {
-                startActivity(new Intent(AccountActivity.this, EditProfileActivity.class));
-            });
-        }
-
-        RelativeLayout appAppearAcc = findViewById(R.id.AppAppearAcc);
-        if (appAppearAcc != null) {
-            appAppearAcc.setOnClickListener(v -> {
-                startActivity(new Intent(AccountActivity.this, AppLanguage.class));
-            });
-        }
-        RelativeLayout relativeHelpAcc = findViewById(R.id.RelativeHelpAcc);
-        if (relativeHelpAcc != null) {
-            relativeHelpAcc.setOnClickListener(v -> {
-                startActivity(new Intent(AccountActivity.this, HelpSupportActivity.class));
-            });
-        }
-        RelativeLayout linkedAccount = findViewById(R.id.linkedAccount);
-        if (linkedAccount != null) {
-            linkedAccount.setOnClickListener(v -> {
-                startActivity(new Intent(AccountActivity.this, LinkedAccountsActivity.class));
-            });
-        }
-        RelativeLayout relativeProfileAcc = findViewById(R.id.RelativeProfileAcc);
-        if (relativeProfileAcc != null) {
-            relativeProfileAcc.setOnClickListener(v -> {
-                startActivity(new Intent(AccountActivity.this, LinkedAccountsActivity.class));
-            });
-        }
-        RelativeLayout relativeMyPet = findViewById(R.id.RelativeMyPet);
-        if (relativeMyPet != null) {
-            relativeMyPet.setOnClickListener(v -> {
-                startActivity(new Intent(AccountActivity.this, PreferencesListActivity.class));
+            btnLogout.setOnClickListener(v -> {
+                startActivity(new Intent(AccountActivity.this, signInActivity.class));
+                finish();
             });
         }
 
 
+        setupNavigation(R.id.navHomeAcc, MainActivity.class);
+        setupNavigation(R.id.navMapsAcc, MapActivity.class);
+        setupNavigation(R.id.navFavAcc, FavouretActivity.class);
+        setupNavigation(R.id.navMsgAcc, ChatActivity.class);
 
+
+
+        setupOptionClick(R.id.RelativeProfileAcc, EditProfileActivity.class);
+        setupOptionClick(R.id.RelativeMyPet, PreferencesListActivity.class);
+        setupOptionClick(R.id.RelativeHelpAcc, HelpSupportActivity.class);
+    }
+
+    private void setupNavigation(int viewId, Class<?> activityClass) {
+        LinearLayout navItem = findViewById(viewId);
+        if (navItem != null) {
+            navItem.setOnClickListener(v -> startActivity(new Intent(AccountActivity.this, activityClass)));
+        }
+    }
+
+    private void setupOptionClick(int viewId, Class<?> activityClass) {
+        View view = findViewById(viewId);
+        if (view != null) {
+            view.setOnClickListener(v -> startActivity(new Intent(AccountActivity.this, activityClass)));
+        }
     }
 }
-
-
-

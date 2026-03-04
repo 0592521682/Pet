@@ -8,7 +8,6 @@
     android:background="@color/white"
     tools:context=".CallsActivity">
 
-    <!-- 1. الشريط العلوي (Top Bar) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBarCalls"
         android:layout_width="match_parent"
@@ -59,7 +58,6 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 2. التبويبات (Tabs) - تبويب المكالمات مفعّل -->
     <LinearLayout
         android:id="@+id/tabContainerCalls"
         android:layout_width="match_parent"
@@ -95,7 +93,6 @@
 
     </LinearLayout>
 
-    <!-- 3. قائمة سجل المكالمات -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -150,7 +147,6 @@
                     android:background="#E5E7EB" />
             </RelativeLayout>
 
-            <!-- Item 2 -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -190,7 +186,6 @@
                     android:background="#E5E7EB" />
             </RelativeLayout>
 
-            <!-- Item 3 -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -230,7 +225,6 @@
                     android:background="#E5E7EB" />
             </RelativeLayout>
 
-            <!-- Item 4 (Red Text) -->
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -273,7 +267,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- 4. شريط التنقل السفلي -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomNavCalls"
         android:layout_width="match_parent"

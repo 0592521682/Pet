@@ -15,15 +15,12 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
-        // إظهار الرسالة فور فتح شاشة البداية
-        // استخدام Handler للانتقال بعد 3 ثواني
         new Handler(Looper.getMainLooper()).postDelayed(new Runnable() {
             @Override
             public void run() {
-                // الانتقال إلى شاشة الترحيب الأولى
+
                 Intent intent = new Intent(SplashActivity.this, Wlcoum1Activity.class);
                 startActivity(intent);
-                // إنهاء هذه الصفحة
                 finish();
             }
         }, 3000);

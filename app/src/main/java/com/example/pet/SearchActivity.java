@@ -16,7 +16,6 @@ public class SearchActivity extends AppCompatActivity {
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // العودة للصفحة السابقة عند الضغط على زر الرجوع
                 finish();
             }
         });

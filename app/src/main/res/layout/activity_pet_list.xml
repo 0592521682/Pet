@@ -7,7 +7,7 @@
     android:background="@color/white"
     tools:context=".PetListActivity">
 
-    <!-- 1. الشريط العلوي -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBar"
         android:layout_width="match_parent"
@@ -51,7 +51,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 2. استخدام ListView لعرض البيانات برمجياً (كما في المحاضرة) -->
+
     <ListView
         android:id="@+id/petsListView"
         android:layout_width="match_parent"

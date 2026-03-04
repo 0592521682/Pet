@@ -7,7 +7,7 @@
     android:background="@color/white"
     tools:context=".PetDetailsActivity">
 
-    <!-- 1. الشريط العلوي -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/detailsTopBar"
         android:layout_width="match_parent"
@@ -60,7 +60,7 @@
             app:tint="@color/black" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 2. المحتوى القابل للتمرير -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -74,7 +74,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- صورة الحيوان -->
+
             <ImageView
                 android:id="@+id/imgPetLarge"
                 android:layout_width="match_parent"
@@ -83,7 +83,7 @@
                 android:scaleType="centerCrop"
                 android:src="@drawable/dog2" />
 
-            <!-- الاسم والموقع -->
+
             <TextView
                 android:id="@+id/txtPetName"
                 android:layout_width="wrap_content"
@@ -102,7 +102,7 @@
                 android:textColor="@color/text_gray"
                 android:textSize="16sp" />
 
-            <!-- بطاقات التفاصيل (الجنس، العمر، الحجم) -->
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -123,7 +123,7 @@
                 </LinearLayout>
             </LinearLayout>
 
-            <!-- معلومات الملجأ -->
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -134,9 +134,7 @@
                 <ImageView android:layout_width="24dp" android:layout_height="24dp" android:layout_alignParentEnd="true" android:layout_centerVertical="true" android:src="@android:drawable/ic_menu_directions" app:tint="@color/primary_orange" />
             </RelativeLayout>
 
-            <!-- الاقسام الجديدة بناء على الصور -->
-            
-            <!-- 1. Personality Traits -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -154,7 +152,7 @@
                 android:textColor="@color/text_gray"
                 android:textSize="14sp" />
 
-            <!-- 2. Ideal Home -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -172,7 +170,7 @@
                 android:textColor="@color/text_gray"
                 android:textSize="14sp" />
 
-            <!-- 3. Adoption Information -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -194,7 +192,7 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- 3. الأزرار السفلية الثابتة -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomActionLayout"
         android:layout_width="match_parent"

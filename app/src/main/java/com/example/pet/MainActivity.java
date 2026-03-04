@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
 
         ImageView imgSearch = findViewById(R.id.imgSearch);
         imgSearch.setOnClickListener(v -> {
-            startActivity(new Intent(MainActivity.this, Wlcoum1Activity.class));
+            startActivity(new Intent(MainActivity.this,SearchActivity.class));
         });
 
 
@@ -43,13 +43,13 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        // 2. الانتقال لصفحة الإشعارات
+
         ImageView imgNotification = findViewById(R.id.imgNotification);
         imgNotification.setOnClickListener(v -> {
             startActivity(new Intent(MainActivity.this, NotificationsActivity.class));
         });
 
-        // 3. الانتقال لصفحة Pets Near You (View All الأولى)
+
         TextView btnViewAllNear = findViewById(R.id.btnViewAllNear);
         if (btnViewAllNear != null) {
             btnViewAllNear.setOnClickListener(v -> {
@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        // 4. الانتقال لصفحة Based on Preferences (View All الثانية)
+
         TextView btnViewAllPref = findViewById(R.id.btnViewAllPref);
         if (btnViewAllPref != null) {
             btnViewAllPref.setOnClickListener(v -> {
@@ -65,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
             });
         }
 
-        // 5. الانتقال لصفحة الحساب (Account)
+
         LinearLayout navAccount = findViewById(R.id.navAccount);
         if (navAccount != null) {
             navAccount.setOnClickListener(v -> {
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        // 6. جعل كروت الحيوانات في الصفحة الرئيسية تفتح صفحة التفاصيل
+
         setupPetCardClick(R.id.petCard1);
         setupPetCardClick(R.id.petCard2);
         setupPetCardClick(R.id.petCard3);
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         setupPetCardClick(R.id.petCard10);
 
 
-        // 7. إعداد مستمعي النقرات للتصنيفات
+
         setupCategoryClick(R.id.catDogs, "Dogs");
         setupCategoryClick(R.id.catCats, "Cats");
         setupCategoryClick(R.id.catRabbits, "Rabbits");
@@ -101,7 +101,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupPetCardClick(int viewId) {
-        ConstraintLayout card = findViewById(viewId); //اذهب لملف التصميم، وابحث عن العنصر الذي يحمل هذا الـ viewId واجلبه لنا لنبرمجه
+        ConstraintLayout card = findViewById(viewId);
         if (card != null) {
             card.setOnClickListener(v -> {
                 startActivity(new Intent(MainActivity.this, PetDetailsActivity.class));//PetDetailsActivity.class مؤقت

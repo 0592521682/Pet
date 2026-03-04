@@ -7,7 +7,7 @@
     android:background="@color/white"
     tools:context=".NotificationsActivity">
 
-    <!-- 1. الشريط العلوي -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/notifTopBar"
         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
             app:tint="@color/black" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 2. محتوى الإشعارات -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -62,7 +62,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Today Section -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -70,7 +70,7 @@
                 android:textColor="@color/text_gray"
                 android:textSize="16sp" />
 
-            <!-- الإشعار 1 -->
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -136,7 +136,7 @@
                     android:textSize="11sp" />
             </RelativeLayout>
 
-            <!-- الإشعار 2 -->
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -191,7 +191,7 @@
                     android:textSize="11sp" />
             </RelativeLayout>
 
-            <!-- Yesterday Section -->
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -200,7 +200,7 @@
                 android:textColor="@color/text_gray"
                 android:textSize="16sp" />
 
-            <!-- الإشعار 3 -->
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

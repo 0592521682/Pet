@@ -15,7 +15,7 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cath);
 
-        // 1. زر الهوم في الأسفل - يفتح الرئيسية
+
         LinearLayout homeChat = findViewById(R.id.HomeChat);
         if (homeChat != null) {
             homeChat.setOnClickListener(v -> {
@@ -23,7 +23,7 @@ public class ChatActivity extends AppCompatActivity {
             });
         }
 
-        // 2. تبويب المكالمات - يفتح صفحة المكالمات
+
         TextView btnCallsTab = findViewById(R.id.tabCallsHeader);
         if (btnCallsTab != null) {
             btnCallsTab.setOnClickListener(v -> {
@@ -32,19 +32,18 @@ public class ChatActivity extends AppCompatActivity {
         }
 
 
-        // 3. برمجة المحادثات لتفتح غرفة الدردشة (تم تصحيح الـ IDs هنا)
-        setupChatItemClick(R.id.layoutChat1); // المحادثة الأولى
-        setupChatItemClick(R.id.layoutChat2); // المحادثة الثانية
+        setupChatItemClick(R.id.layoutChat1);
+        setupChatItemClick(R.id.layoutChat2);
     }
 
-    /**
-     * دالة مساعدة لضمان فتح غرفة المحادثة عند الضغط على أي عنصر في القائمة
-     */
+
+
+
     private void setupChatItemClick(int viewId) {
         RelativeLayout chatItem = findViewById(viewId);
         if (chatItem != null) {
             chatItem.setOnClickListener(v -> {
-                // الانتقال لصفحة غرفة المحادثة
+
                 Intent intent = new Intent(ChatActivity.this, ChatRoomActivity.class);
                 startActivity(intent);
             });

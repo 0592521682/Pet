@@ -19,7 +19,7 @@ public class CallsActivity extends AppCompatActivity {
             startActivity(new Intent(CallsActivity.this, MainActivity.class));
         });
 
-        // العودة لصفحة المحادثات عند الضغط على Chats
+
         TextView btnChatsTab = findViewById(R.id.tabChatsInCalls);
         if (btnChatsTab != null) {
             btnChatsTab.setOnClickListener(new View.OnClickListener() {

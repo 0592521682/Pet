@@ -8,7 +8,7 @@
     android:background="@color/white"
     tools:context=".MapActivity">
 
-    <!-- 1. الشريط العلوي (Top Bar) -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/mapTopBar"
         android:layout_width="match_parent"
@@ -48,7 +48,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 2. قائمة المسافات (Distances List) -->
+
     <LinearLayout
         android:id="@+id/distanceContainer"
         android:layout_width="match_parent"
@@ -95,7 +95,7 @@
 
 
 
-    <!-- 4. شريط التنقل السفلي -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/mapBottomNav"
         android:layout_width="match_parent"

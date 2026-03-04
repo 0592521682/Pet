@@ -12,8 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pet">
 
-
-
+        <activity
+            android:name=".MyPetActivity"
+            android:exported="false" />
         <activity
             android:name=".SplashActivity"
             android:exported="true">

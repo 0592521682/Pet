@@ -19,13 +19,11 @@ public class PetsNearYouActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pets_near_you);
 
-        // 1. برمجة زر الرجوع
         ImageView btnBack = findViewById(R.id.btnBackNearYou);
         if (btnBack != null) {
             btnBack.setOnClickListener(v -> finish());
         }
 
-        // 2. إعداد الـ ListView والبيانات
         listView = findViewById(R.id.petsNearYouListView);
         petList = new ArrayList<>();
         petList.add(new Pet("Luna", "1.2 km", R.drawable.dog, "$100", 4.5f));
@@ -40,10 +38,8 @@ public class PetsNearYouActivity extends AppCompatActivity {
                 startActivity(new Intent(this, PetDetailsActivity.class)));
         }
 
-        // 3. برمجة الـ BottomNavigationView الرسمي
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationViewNear);
         if (bottomNavigationView != null) {
-            // نترك اختيار الأيقونة حسب التصميم (Home أو Maps)
             bottomNavigationView.setSelectedItemId(R.id.nav_maps);
 
             bottomNavigationView.setOnItemSelectedListener(item -> {

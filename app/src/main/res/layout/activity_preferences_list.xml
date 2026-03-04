@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <!-- الشريط العلوي -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/prefTopBar"
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- قائمة التفضيلات باستخدام ListView -->
+
     <ListView
         android:id="@+id/preferencesListView"
         android:layout_width="match_parent"

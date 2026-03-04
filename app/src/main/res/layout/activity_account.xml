@@ -7,7 +7,7 @@
     android:background="@color/white"
     tools:context=".AccountActivity">
 
-    <!-- 1. الشريط العلوي (Top Bar) -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/accountTopBar"
         android:layout_width="match_parent"
@@ -39,7 +39,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 2. محتوى الصفحة القابل للتمرير -->
+
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -53,7 +53,7 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- قسم الملف الشخصي (Profile Section) -->
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -102,9 +102,7 @@
                 android:layout_marginBottom="16dp"
                 android:background="#F3F4F6" />
 
-            <!-- قائمة الخيارات (Options List) -->
-            
-            <!-- My Pet Preferences -->
+
             <RelativeLayout
                 android:id="@+id/RelativeMyPet"
                 android:layout_width="match_parent"
@@ -135,7 +133,7 @@
                     app:tint="@color/black" />
             </RelativeLayout>
 
-            <!-- My Profile -->
+
             <RelativeLayout
                 android:id="@+id/RelativeProfileAcc"
                 android:layout_width="match_parent"
@@ -166,7 +164,7 @@
                     app:tint="@color/black" />
             </RelativeLayout>
 
-            <!-- Notifications -->
+
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -196,7 +194,7 @@
                     app:tint="@color/black" />
             </RelativeLayout>
 
-            <!-- Account & Security -->
+
             <RelativeLayout
                 android:id="@+id/linkedAccount"
                 android:layout_width="match_parent"
@@ -347,7 +345,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- 3. شريط التنقل السفلي (Bottom Nav) -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/accountBottomNav"
         android:layout_width="match_parent"

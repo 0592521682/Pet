@@ -8,7 +8,6 @@
     android:background="@color/white"
     tools:context=".ChatActivity">
 
-    <!-- 1. الشريط العلوي -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBar1"
         android:layout_width="match_parent"
@@ -21,7 +20,6 @@
         <ImageView android:id="@+id/btnSearchMsg" android:layout_width="30dp" android:layout_height="30dp" android:layout_marginEnd="16dp" android:src="@drawable/search" app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toStartOf="@+id/btnMoreMsg" app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- 2. التبويبات -->
     <LinearLayout
         android:id="@+id/linearLayout6"
         android:layout_width="match_parent"
@@ -36,7 +34,6 @@
         <TextView android:id="@+id/tabCallsHeader" android:layout_width="0dp" android:layout_height="match_parent" android:layout_weight="1" android:gravity="center" android:text="Calls" android:textColor="@color/text_gray" android:textStyle="bold" android:textSize="16sp" />
     </LinearLayout>
 
-    <!-- 3. القائمة -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -46,14 +43,12 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout6">
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="vertical" android:paddingHorizontal="16dp">
             
-            <!-- محادثة 1 -->
             <RelativeLayout android:id="@+id/layoutChat1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="24dp" android:clickable="true" android:focusable="true">
                 <ImageView android:id="@+id/img1" android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/ms1" android:scaleType="centerCrop" android:background="@drawable/circle_bg" />
                 <TextView android:id="@+id/txtNameToClick1" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_toEndOf="@id/img1" android:text="Happy Tails Animal Rescue" android:textColor="@color/black" android:textStyle="bold" android:textSize="16sp" />
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_below="@id/txtNameToClick1" android:layout_marginStart="16dp" android:layout_marginTop="4dp" android:layout_toEndOf="@id/img1" android:text="Hi of course. you can come directly..." android:textColor="@color/text_gray" android:textSize="13sp" />
     </RelativeLayout>
 
-            <!-- محادثة 2 -->
             <RelativeLayout android:id="@+id/layoutChat2" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="24dp" android:clickable="true" android:focusable="true">
                 <ImageView android:id="@+id/img2" android:layout_width="60dp" android:layout_height="60dp" android:src="@drawable/ms2" android:scaleType="centerCrop" android:background="@drawable/circle_bg" />
                 <TextView android:id="@+id/txtNameToClick2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginStart="16dp" android:layout_toEndOf="@id/img2" android:text="City Critters Adoption Center" android:textColor="@color/black" android:textStyle="bold" android:textSize="16sp" />
@@ -63,7 +58,6 @@
         </LinearLayout>
     </ScrollView>
 
-    <!-- 4. شريط التنقل السفلي -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/bottomNav"
         android:layout_width="match_parent"

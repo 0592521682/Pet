@@ -7,7 +7,7 @@
     android:background="@color/white"
     tools:context=".PetsNearYouActivity">
 
-    <!-- الشريط العلوي -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/nearYouTopBar"
         android:layout_width="match_parent"
@@ -37,7 +37,7 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- قائمة التصنيفات -->
+
     <HorizontalScrollView
         android:id="@+id/scrollChips"
         android:layout_width="match_parent"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:padding="16dp">
-            <!-- Dogs Chip -->
+
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -58,11 +58,11 @@
                 android:padding="10dp">
                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Dogs" android:textColor="@color/white" android:textStyle="bold" />
             </LinearLayout>
-            <!-- ... -->
+
         </LinearLayout>
     </HorizontalScrollView>
 
-    <!-- قائمة الحيوانات ListView -->
+
     <ListView
         android:id="@+id/petsNearYouListView"
         android:layout_width="match_parent"
@@ -74,7 +74,7 @@
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationViewNear"
         app:layout_constraintTop_toBottomOf="@+id/scrollChips" />
 
-    <!-- الشريط السفلي الرسمي -->
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationViewNear"
         android:layout_width="match_parent"

@@ -36,25 +36,24 @@ public class PetAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        // الربط بين كود الجافا وتصميم السطر الواحد XML
         if (convertView == null) {
             convertView = LayoutInflater.from(context).inflate(R.layout.item_pet, parent, false);
         }
 
-        // الحصول على الحيوان الحالي من المصفوفة
+
         Pet currentPet = petList.get(position);
 
-        // ربط العناصر بالواجهة
         ImageView imgPet = convertView.findViewById(R.id.imgPet);
         TextView txtName = convertView.findViewById(R.id.txtPetName);
         TextView txtPrice = convertView.findViewById(R.id.txtPetPrice);
         RatingBar ratingBar = convertView.findViewById(R.id.petRating);
 
-        // تعبئة البيانات في العناصر
-        imgPet.setImageResource(currentPet.getImageResId());
-        txtName.setText(currentPet.getName() + " (" + currentPet.getBreed() + ")");
-        txtPrice.setText(currentPet.getPrice());
-        ratingBar.setRating(currentPet.getRating());
+        if (currentPet != null) {
+            imgPet.setImageResource(currentPet.getImageResId());
+            txtName.setText(currentPet.getName() + " (" + currentPet.getBreed() + ")");
+            txtPrice.setText(currentPet.getPrice());
+            ratingBar.setRating(currentPet.getRating());
+        }
 
         return convertView;
     }
